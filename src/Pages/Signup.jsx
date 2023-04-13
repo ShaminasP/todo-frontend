@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { userRegister } from "../API/userRequest"
 import { useNavigate } from "react-router-dom"
+import {Link} from "react-router-dom"
 
 const Signup = () => {
     const [formData, setFormData] = useState({ name: "", email: "", password: "" })
@@ -27,16 +28,16 @@ const Signup = () => {
                 <form onSubmit={handleSubmit} className="space-y-12 ng-untouched ng-pristine ng-valid">
                     <div className="space-y-4">
                         <div>
-                            <label for="name" className="block mb-2 text-sm">Name</label>
+                            <label htmlFor="name" className="block mb-2 text-sm">Name</label>
                             <input type="name" name="name" id="name" value={formData.name} onChange={handleInput} placeholder="leroy" className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800 outline-none" />
                         </div>
                         <div>
-                            <label for="email" className="block mb-2 text-sm">Email address</label>
+                            <label htmlFor="email" className="block mb-2 text-sm">Email address</label>
                             <input type="email" name="email" id="email" value={formData.email} onChange={handleInput} placeholder="leroy@jenkins.com" className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800 outline-none" />
                         </div>
                         <div>
                             <div className="flex justify-between mb-2">
-                                <label for="password" className="text-sm">Password</label>
+                                <label htmlFor="password" className="text-sm">Password</label>
                             </div>
                             <input type="password" name="password" id="password" value={formData.password} onChange={handleInput} placeholder="*****" className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800 outline-none" />
                         </div>
@@ -46,7 +47,7 @@ const Signup = () => {
                             <button type="submit" className="w-full px-8 py-3 font-semibold rounded-md bg-emerald-600 text-gray-50">Sign up</button>
                         </div>
                         <p className="px-6 text-sm text-center text-gray-600">Already have a account?
-                            <a rel="noopener noreferrer" href="#" className="hover:underline text-emerald-600">Login</a>.
+                            <Link to="/login" className="hover:underline text-emerald-600">Login</Link>.
                         </p>
                     </div>
                 </form>
